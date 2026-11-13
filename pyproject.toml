@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orbitweaver"
+version = "0.1.0"
+description = "LLM-agent joint planning for optically interconnected orbital GPU clusters"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [{name = "Pengcheng Luo"}, {name = "Bowen Zhang"}]
+dependencies = ["protobuf>=6.31.1,<7"]
+
+[project.scripts]
+orbitweaver = "orbitweaver.cli:main"
+
+[project.urls]
+Repository = "https://github.com/luopeng69131/OrbitWeaver"
+Issues = "https://github.com/luopeng69131/OrbitWeaver/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"orbitweaver._vendor" = ["*.proto"]

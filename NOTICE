@@ -1,0 +1,10 @@
+OrbitWeaver
+Copyright 2026 Pengcheng Luo and Bowen Zhang
+
+This project is licensed under the Apache License, Version 2.0.
+
+The Chakra protobuf schema and generated Python definitions in
+src/orbitweaver/_vendor originate from MLCommons Chakra:
+https://github.com/mlcommons/chakra
+These files are distributed under Apache-2.0; the license is in LICENSE.
+The schema defines the interoperable execution-trace record format.
