@@ -10,7 +10,7 @@
 
 **English · [简体中文](README_zh.md)**
 
-[Overview](#why-orbitweaver) · [Quick start](#quick-start) · [Data preparation](#data-preparation) · [Method](docs/method.md)
+[Overview](#why-orbitweaver) · [Quick start](#quick-start) · [A100 traces](datasets/a100) · [Simulator](docs/simulator.md) · [Data preparation](#data-preparation) · [Method](docs/method.md)
 
 </div>
 
@@ -21,6 +21,12 @@ Space-based data-center designs bring accelerators into close orbital formations
 **OrbitWeaver coordinates where ranks run and when their communications proceed.** An LLM agent examines communication subgroups, shared paths and execution dependencies, proposes joint plans, and refines them with simulation feedback. The resulting plan connects placement decisions to communication progress and job completion.
 
 <p align="center"><img src="assets/orbital_cluster.png" width="100%" alt="Orbital GPU clusters and contention on shared optical paths"></p>
+
+## Open resources
+
+- **Method core:** structural tools, joint plans, agent interaction and budgeted validation.
+- **Measured A100 traces:** [Transformer and ResNet-18](datasets/a100), with eight rank files per workload, collection metadata and SHA-256 checksums.
+- **Orbital GPU simulator:** a C++ event kernel, optical-network model, configurable scenarios and a Python API for new placement/scheduling policies.
 
 ## How it works
 
@@ -56,22 +62,43 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-### Explore the planning tools
+### Run the simulator with measured A100 data
 
-Generate an example workload and exercise structural analysis, fast scoring and reference selection:
+Build the C++17 kernel, prepare a graph and simulate one orbital-cluster scenario:
+
+```bash
+orbitweaver build-simulator --output build/native
+orbitweaver convert-a100 \
+  --input datasets/a100/transformer --output data/transformer_graph.json
+orbitweaver build-case --graph data/transformer_graph.json \
+  --jobs 4 --condition slow-links --output data/transformer_case.json
+orbitweaver simulate --problem data/transformer_case.json \
+  --binary-directory build/native --output runs/transformer
+```
+
+The output reports mean/per-job JCT, execution-completion audits and process costs.
+[Simulator documentation](docs/simulator.md) shows how to change allocations,
+arrivals, link capacity and communication priorities.
+
+### Explore the planning tools
 
 ```bash
 orbitweaver demo --output runs/demo
 ```
 
-The output contains `problem.json`, `session.json`, `result.json` and `costs.jsonl`. The [Python example](examples/plan_with_tools.py) shows how to call the same tools directly.
+This generated example exercises structural analysis, fast scoring and reference selection.
+The [Python example](examples/plan_with_tools.py) shows how to call the same tools directly.
 
 ### Run an LLM agent
 
 Install and authenticate the [Codex CLI](https://developers.openai.com/codex/cli/), then start a planning session:
 
 ```bash
-orbitweaver run-agent   --problem runs/demo/problem.json   --output runs/agent   --model gpt-6.1-sol   --effort xhigh
+orbitweaver run-agent \
+  --problem data/transformer_case.json \
+  --output runs/agent \
+  --native-binary-directory build/native \
+  --model gpt-6.1-sol --effort xhigh
 ```
 
 The session exposes `analyze`, `probe`, `budget` and `best` through `lab.py`. Default budgets are 64 fast requests and eight reference requests. Initialization, candidate evaluations, failed attempts, cache hits and model usage are recorded in the session outputs.
@@ -81,7 +108,7 @@ The session exposes `analyze`, `probe`, `budget` and `best` through `lab.py`. De
 | Workload source | Preparation |
 |---|---|
 | **H200 / NeMo Mixtral** — [MLCommons Chakra MLSys 2026 artifact](https://doi.org/10.5281/zenodo.19636323), Sridharan et al., 2026 | Verify the source archive, link host/device traces with Chakra, and normalize per-rank ET records. |
-| **A100 synchronous training** — OrbitWeaver's [CUDA-event capture program](scripts/capture_a100.py) | Measure Transformer or ResNet-18 segments and build a dependency graph from per-rank records. |
+| **A100 synchronous training** — [released measured traces](datasets/a100) and [capture program](scripts/capture_a100.py) | Process the supplied Transformer/ResNet-18 records or collect a new workload with CUDA events. |
 
 ```bash
 orbitweaver convert-chakra --input data/h200/et --output data/h200_graph.json
@@ -96,7 +123,7 @@ The pipeline preserves compute durations and dependencies, matches collective pa
 - **Planning tools:** use graph, path-demand and waiting diagnostics to construct new candidates.
 - **Scenarios:** configure allocations, arrival timing, optical-link capacity and whole-window repetition.
 
-The package includes a critical-path evaluator and a resource-aware event-replay backend. The command adapter connects the same planner to external fast and reference simulators.
+The package includes the native C++ simulator, a critical-path evaluator and a readable Python event-replay backend. The command adapter connects the same planner to external fast and reference simulators.
 
 ## Community and license
 

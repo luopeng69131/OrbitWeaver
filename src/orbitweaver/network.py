@@ -48,7 +48,7 @@ def collective_service(node, plan, problem, paths):
     elif node.operation == "reducescatter":
         volume, rounds = node.bytes * (k - 1) / k, k - 1
     elif node.operation == "alltoall":
-        volume, rounds = node.bytes * (k - 1) / 2, k - 1
+        volume, rounds = node.bytes * (k - 1) / 2, k * (k - 1) // 2
     elif node.operation == "broadcast":
         volume, rounds = node.bytes, k - 1
     elif node.operation == "barrier":

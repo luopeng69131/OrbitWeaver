@@ -1,0 +1,184 @@
+{
+  "name": "OrbitWeaver A100 Synchronous-Training Traces",
+  "version": "1.0",
+  "creators": [
+    "Pengcheng Luo",
+    "Bowen Zhang"
+  ],
+  "license": "Apache-2.0",
+  "collection_date": "2026-10-01",
+  "capture_program": "scripts/capture_a100.py",
+  "workloads": {
+    "transformer": {
+      "ranks": 8,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "torch": "2.11.0+cu130",
+      "measured_iterations": 16,
+      "warmup_iterations": 3,
+      "input_shape_per_rank": [
+        4,
+        512,
+        768
+      ],
+      "parameter_count": 85056000,
+      "bucket_bytes": 26214400,
+      "records_per_rank": [
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800
+      ],
+      "collectives_per_rank": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256
+      ],
+      "gpu_compute_time_sum_s": 4.740937,
+      "collection_start_utc": "2026-10-01T08:35:00.945433+00:00",
+      "collection_end_utc": "2026-10-01T08:35:02.265344+00:00",
+      "native_graph": {
+        "nodes": 4616,
+        "edges": 6392,
+        "ranks": 8,
+        "original_nodes": 6408,
+        "sha256": "5a3556cf646b104d0cb7b28878a4edefd0cf59d74b656182ad3aa0645825ed10"
+      }
+    },
+    "resnet18": {
+      "ranks": 8,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "torch": "2.11.0+cu130",
+      "measured_iterations": 16,
+      "warmup_iterations": 3,
+      "input_shape_per_rank": [
+        16,
+        3,
+        224,
+        224
+      ],
+      "parameter_count": 11689512,
+      "bucket_bytes": 26214400,
+      "records_per_rank": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128
+      ],
+      "collectives_per_rank": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32
+      ],
+      "gpu_compute_time_sum_s": 1.697028,
+      "collection_start_utc": "2026-10-01T08:37:15.775736+00:00",
+      "collection_end_utc": "2026-10-01T08:37:16.571881+00:00",
+      "native_graph": {
+        "nodes": 808,
+        "edges": 1016,
+        "ranks": 8,
+        "original_nodes": 1032,
+        "sha256": "5671fedc36e36ac7735712b36ba26c114f335e689cbd7d9eb9f2e20386fe9c86"
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "transformer/rank_0.json",
+      "bytes": 144463,
+      "sha256": "1f1aeff888f906d4a632b93da0287e62360ff82db139d569ff2fab0b595a2856"
+    },
+    {
+      "path": "transformer/rank_1.json",
+      "bytes": 144464,
+      "sha256": "454b95c3d388859a0d53e41940cdd78feca1168fc5905390adceb5067bc56674"
+    },
+    {
+      "path": "transformer/rank_2.json",
+      "bytes": 144451,
+      "sha256": "b8d7633979a4a9d8134fcda8aa879b5c045471784ad74801542254eab62ce219"
+    },
+    {
+      "path": "transformer/rank_3.json",
+      "bytes": 144478,
+      "sha256": "731f5f8dc6b5ea3f6c8939656347f14a7be5dc64fe38c2fb113c9f33e8ac9d06"
+    },
+    {
+      "path": "transformer/rank_4.json",
+      "bytes": 144479,
+      "sha256": "5e0044457eba1831a34b5f84f83334d8bb451dc660e6e0f8a00b8482f3f3fea5"
+    },
+    {
+      "path": "transformer/rank_5.json",
+      "bytes": 144471,
+      "sha256": "b7c4a2f8462a218e6bf312692bbc7e4fce26cb5f839300207c902b8c12fa7ce2"
+    },
+    {
+      "path": "transformer/rank_6.json",
+      "bytes": 144462,
+      "sha256": "bb8868fb33767385ec912db7ee2531b2e7e5f14522f9dc6149b15c4f6d051261"
+    },
+    {
+      "path": "transformer/rank_7.json",
+      "bytes": 144454,
+      "sha256": "3c27463ffb8059079e4a19e14f362526689fbe73b016f102b7690c8fcea3ce3a"
+    },
+    {
+      "path": "resnet18/rank_0.json",
+      "bytes": 23574,
+      "sha256": "a24c37e049d961ec66905ce5347fd2ec7c49505defbaf743d6a9742b0dfac046"
+    },
+    {
+      "path": "resnet18/rank_1.json",
+      "bytes": 23577,
+      "sha256": "a302ecf5e91b9f4c6a1464d560593162ac270ab80c9ecac221ef4668f88aff77"
+    },
+    {
+      "path": "resnet18/rank_2.json",
+      "bytes": 23570,
+      "sha256": "db0045a15e76c19b1311b6377f9470d2dc1ef30452aef168f63e696e28ee8790"
+    },
+    {
+      "path": "resnet18/rank_3.json",
+      "bytes": 23573,
+      "sha256": "11ce168562c98a784105cac9051c53044113bf4be3b2c248ba78a5cfff412e89"
+    },
+    {
+      "path": "resnet18/rank_4.json",
+      "bytes": 23561,
+      "sha256": "a05d7f3055c328eefc0c3d0009c43b9347903b4509655c618047966c758146b9"
+    },
+    {
+      "path": "resnet18/rank_5.json",
+      "bytes": 23573,
+      "sha256": "32692d08c0f2d30799817617e98da20f187e31d58113f98cdc156b7c2840a1ad"
+    },
+    {
+      "path": "resnet18/rank_6.json",
+      "bytes": 23572,
+      "sha256": "02e900b2bc893e7abb0da2c64781e576e230bc0a377a67ecfc5b7d67fa03749b"
+    },
+    {
+      "path": "resnet18/rank_7.json",
+      "bytes": 23574,
+      "sha256": "bcfd937b8ce4b2d29f980fce71e6f0fcdbf79f358909d32e178fdb62f98e9654"
+    }
+  ]
+}

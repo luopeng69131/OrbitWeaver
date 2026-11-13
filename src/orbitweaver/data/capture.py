@@ -17,12 +17,15 @@ def load_a100(directory):
         raise ValueError("Capture records must describe matching training segments")
     records = []
     for data in payloads:
+        records.append(dict(rank=data["rank"], id="process_group", kind="metadata",
+                            deps=[], duration_s=0.0, bytes=0, operation="allreduce",
+                            identity="", group_size=1, source_order=0))
         previous = None
         for index, row in enumerate(data["records"]):
             kind = row["kind"]
             if kind not in ("compute", "collective"):
                 raise ValueError("Unknown capture segment kind")
-            nid = str(index)
+            nid = str(index + 2)
             records.append(dict(rank=data["rank"], id=nid, kind=kind,
                                 deps=[] if previous is None else [previous],
                                 duration_s=row["duration_us"] * 1e-6,

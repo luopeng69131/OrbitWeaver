@@ -1,0 +1,1174 @@
+{
+  "model": "resnet18",
+  "rank": 0,
+  "world_size": 8,
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.11.0+cu130",
+  "collection_unix_s": 1790843835.7773583,
+  "completed_unix_s": 1790843836.5718029,
+  "steps": 16,
+  "warmup_steps": 3,
+  "input_shape": [
+    16,
+    3,
+    224,
+    224
+  ],
+  "parameter_count": 11689512,
+  "bucket_bytes": 26214400,
+  "records": [
+    {
+      "index": 0,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 8687,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 1,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 271,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 2,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1380,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 0
+    },
+    {
+      "index": 3,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 838,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 4,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 73,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 5,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 492,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 1
+    },
+    {
+      "index": 6,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 179,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 7,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 436,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 8,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 8964,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 9,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 266,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 10,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1275,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 2
+    },
+    {
+      "index": 11,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 871,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 12,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 80,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 13,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 382,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 3
+    },
+    {
+      "index": 14,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 187,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 15,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 485,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 16,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 9467,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 17,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 269,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 18,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 787,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 4
+    },
+    {
+      "index": 19,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 835,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 20,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 74,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 21,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1299,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 5
+    },
+    {
+      "index": 22,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 185,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 23,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 435,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 24,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 9659,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 25,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 266,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 26,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1201,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 6
+    },
+    {
+      "index": 27,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 849,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 28,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 74,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 29,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 481,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 7
+    },
+    {
+      "index": 30,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 188,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 31,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 435,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 32,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 9986,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 33,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 266,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 34,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1380,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 8
+    },
+    {
+      "index": 35,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 838,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 36,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 73,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 37,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 493,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 9
+    },
+    {
+      "index": 38,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 176,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 39,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 427,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 40,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 10206,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 41,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 270,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 42,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1337,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 10
+    },
+    {
+      "index": 43,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 866,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 44,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 73,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 45,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 453,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 11
+    },
+    {
+      "index": 46,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 181,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 47,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 444,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 48,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 10650,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 49,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 269,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 50,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1554,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 12
+    },
+    {
+      "index": 51,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 852,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 52,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 74,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 53,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 519,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 13
+    },
+    {
+      "index": 54,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 181,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 55,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 443,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 56,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 11081,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 57,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 268,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 58,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 2288,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 14
+    },
+    {
+      "index": 59,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 863,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 60,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 74,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 61,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 496,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 15
+    },
+    {
+      "index": 62,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 193,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 63,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 436,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 64,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 11670,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 65,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 271,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 66,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1333,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 16
+    },
+    {
+      "index": 67,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 889,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 68,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 80,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 69,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 525,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 17
+    },
+    {
+      "index": 70,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 187,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 71,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 454,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 72,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 12199,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 73,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 283,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 74,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1383,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 18
+    },
+    {
+      "index": 75,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 926,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 76,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 76,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 77,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 482,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 19
+    },
+    {
+      "index": 78,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 198,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 79,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 452,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 80,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 12579,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 81,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 282,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 82,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1841,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 20
+    },
+    {
+      "index": 83,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 934,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 84,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 76,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 85,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 518,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 21
+    },
+    {
+      "index": 86,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 197,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 87,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 446,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 88,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 13107,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 89,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 280,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 90,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1639,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 22
+    },
+    {
+      "index": 91,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 969,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 92,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 77,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 93,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 501,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 23
+    },
+    {
+      "index": 94,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 202,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 95,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 456,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 96,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 13292,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 97,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 283,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 98,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1980,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 24
+    },
+    {
+      "index": 99,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 1011,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 100,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 79,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 101,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 598,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 25
+    },
+    {
+      "index": 102,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 210,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 103,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 465,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 104,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 14204,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 105,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 276,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 106,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 3863,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 26
+    },
+    {
+      "index": 107,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 1015,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 108,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 78,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 109,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 662,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 27
+    },
+    {
+      "index": 110,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 211,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 111,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 465,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 112,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 14300,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 113,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 256,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 114,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 2087,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 28
+    },
+    {
+      "index": 115,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 1049,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 116,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 75,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 117,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 493,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 29
+    },
+    {
+      "index": 118,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 220,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 119,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 469,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 120,
+      "kind": "compute",
+      "name": "forward_backward",
+      "duration_us": 15265,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 121,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 253,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 122,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 1560,
+      "bytes": 25823488,
+      "type": 0,
+      "sequence": 30
+    },
+    {
+      "index": 123,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 1101,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 124,
+      "kind": "compute",
+      "name": "gradient_pack",
+      "duration_us": 77,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 125,
+      "kind": "collective",
+      "name": "gradient_allreduce",
+      "duration_us": 552,
+      "bytes": 20934560,
+      "type": 0,
+      "sequence": 31
+    },
+    {
+      "index": 126,
+      "kind": "compute",
+      "name": "gradient_unpack",
+      "duration_us": 228,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    },
+    {
+      "index": 127,
+      "kind": "compute",
+      "name": "sgd_update",
+      "duration_us": 486,
+      "bytes": 0,
+      "type": null,
+      "sequence": null
+    }
+  ],
+  "scope": "Measured synchronous data-parallel training segments on eight A100 GPUs. Random weights and synthetic inputs; compute uses BF16 autocast, FP32 gradients. No communication/compute overlap in this explicit training program. CUDA durations include GPU execution within each segment. Collective timings are archived but counterfactual network replay recomputes them."
+}

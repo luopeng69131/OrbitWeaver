@@ -42,7 +42,7 @@ class TraceTests(unittest.TestCase):
 
     def test_segment_pairing_preserves_compute(self):
         graph = self.capture()
-        self.assertEqual(len(graph.nodes), 3)
+        self.assertEqual(len(graph.nodes), 5)
         coll = next(n for n in graph.nodes if n.kind == "collective")
         self.assertEqual(coll.members, (0, 1))
         durations = [n.duration_s for n in graph.nodes if n.kind == "compute"]

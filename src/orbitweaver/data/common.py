@@ -28,7 +28,7 @@ def normalize(records, ranks, metadata=None):
             identity = row["identity"]
             if identity not in nodes:
                 nodes[identity] = Node(identity, "collective", members=(), bytes=row["bytes"],
-                                       operation=row["operation"], source_order=row["source_order"],
+                                       operation=row["operation"], source_order=len(nodes),
                                        metadata={"rank_node_ids": [], "recorded_durations_s": []})
             node = nodes[identity]
             if rank in node.members or node.bytes != row["bytes"] or node.operation != row["operation"]:
@@ -43,7 +43,7 @@ def normalize(records, ranks, metadata=None):
         else:
             nid = "r%d:%s" % (rank, original_id)
             nodes[nid] = Node(nid, row["kind"], rank=rank, duration_s=row["duration_s"],
-                              source_order=row["source_order"], metadata=row.get("metadata", {}))
+                              source_order=len(nodes), metadata=row.get("metadata", {}))
         mappings[rank, original_id] = nid
         pending.append((nid, rank, row["deps"]))
     dependencies = defaultdict(set)

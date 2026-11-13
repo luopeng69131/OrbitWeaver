@@ -39,6 +39,18 @@ links and the selected evaluation backend.
 
 ## A100: measured synchronous-training segments
 
+The [released A100 dataset](../datasets/a100) contains both workloads:
+eight original rank files per workload, with 16 measured iterations after three
+warmup iterations. The collection date is October 1, 2026; hardware/software
+metadata and per-file SHA-256 values are in the [dataset manifest](../datasets/a100/manifest.json).
+
+Process the supplied records:
+
+```bash
+orbitweaver convert-a100 \
+  --input datasets/a100/transformer --output data/a100_transformer_graph.json
+```
+
 The acquisition program `scripts/capture_a100.py` records synchronized data-parallel
 training with CUDA events. The Transformer uses 12 layers, hidden size 768,
 12 attention heads, feedforward dimension 3,072, batch size 4 and sequence length
@@ -80,3 +92,5 @@ windows. Each job receives its own GPU allocation.
 `repeat_jobs` accepts an explicit repetition vector for custom workloads.
 The graph, source-file checksums and scenario configuration travel together in
 the prepared problem JSON.
+
+Run prepared problems with [the simulator interface](simulator.md).

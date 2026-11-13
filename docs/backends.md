@@ -6,6 +6,11 @@ selection independent of candidate construction.
 
 ## Included evaluators
 
+**Native C++ simulator.** Replays the compact execution graph with synchronized
+collective rounds and physical resource admission. The companion feature
+extractor supplies communication service and remaining-tail values. Build and
+API examples are in [simulator.md](simulator.md).
+
 **Critical-path evaluator.** Runs a topological traversal using recorded compute
 durations and routed collective service demand. It supplies inexpensive
 placement-sensitive estimates.

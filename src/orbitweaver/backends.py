@@ -104,6 +104,9 @@ def make_backend(spec):
         return CriticalPathBackend()
     if spec["type"] == "event_replay":
         return EventReplayBackend()
+    if spec["type"] == "native":
+        from .native.backend import NativeBackend
+        return NativeBackend(spec["binary_directory"], spec["output"], spec.get("diagnostics", False))
     if spec["type"] == "command":
         return CommandBackend(spec["command"], spec.get("timeout_s", 3600))
     raise ValueError("Unknown backend type")
