@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use OrbitWeaver, please cite the paper listed below."
+type: software
+title: OrbitWeaver
+authors:
+  - family-names: Luo
+    given-names: Pengcheng
+  - family-names: Zhang
+    given-names: Bowen
+repository-code: "https://github.com/luopeng69131/OrbitWeaver"
+license: Apache-2.0
+preferred-citation:
+  type: article
+  title: "OrbitWeaver: LLM Agent Planning with Simulation Feedback for Optically Interconnected Orbital GPU Clusters"
+  authors:
+    - family-names: Luo
+      given-names: Pengcheng
+    - family-names: Zhang
+      given-names: Bowen
+  year: 2026
+  journal: arXiv
+  doi: "10.48550/arXiv.2611.17850"
+  url: "https://arxiv.org/abs/2611.17850"

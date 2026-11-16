@@ -10,7 +10,7 @@
 
 **English · [简体中文](README_zh.md)**
 
-[Overview](#why-orbitweaver) · [Quick start](#quick-start) · [A100 traces](datasets/a100) · [Simulator](docs/simulator.md) · [Data preparation](#data-preparation) · [Method](docs/method.md)
+[Paper](https://arxiv.org/abs/2611.17850) · [Overview](#why-orbitweaver) · [Quick start](#quick-start) · [A100 traces](datasets/a100) · [Simulator](docs/simulator.md) · [Data preparation](#data-preparation) · [Method](docs/method.md)
 
 </div>
 
@@ -124,6 +124,22 @@ The pipeline preserves compute durations and dependencies, matches collective pa
 - **Scenarios:** configure allocations, arrival timing, optical-link capacity and whole-window repetition.
 
 The package includes the native C++ simulator, a critical-path evaluator and a readable Python event-replay backend. The command adapter connects the same planner to external fast and reference simulators.
+
+## Citation
+
+If you use OrbitWeaver in your research, please cite our [paper](https://arxiv.org/abs/2611.17850):
+
+```bibtex
+@misc{luo2026orbitweaver,
+  title         = {OrbitWeaver: {LLM} Agent Planning with Simulation Feedback for Optically Interconnected Orbital {GPU} Clusters},
+  author        = {Luo, Pengcheng and Zhang, Bowen},
+  year          = {2026},
+  eprint        = {2611.17850},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.DC},
+  url           = {https://arxiv.org/abs/2611.17850}
+}
+```
 
 ## Community and license
 

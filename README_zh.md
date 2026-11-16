@@ -10,7 +10,7 @@
 
 **[English](README.md) · 简体中文**
 
-[背景](#为什么需要-orbitweaver) · [快速开始](#快速开始) · [A100 数据](datasets/a100) · [仿真器](docs/simulator.md) · [数据准备](#数据准备) · [方法说明](docs/method.md)
+[论文](https://arxiv.org/abs/2611.17850) · [背景](#为什么需要-orbitweaver) · [快速开始](#快速开始) · [A100 数据](datasets/a100) · [仿真器](docs/simulator.md) · [数据准备](#数据准备) · [方法说明](docs/method.md)
 
 </div>
 
@@ -123,6 +123,22 @@ orbitweaver build-case --graph data/h200_graph.json   --jobs 4 --condition slow-
 - **实验场景**：配置 GPU 分配、到达时刻、光链路容量及完整窗口重复次数。
 
 软件包提供 C++ 原生仿真器、关键路径评估器与便于阅读的 Python 事件重放后端；命令适配器将同一规划器连接到外部快速仿真器和参考仿真器。
+
+## 引用
+
+如果您在研究中使用 OrbitWeaver，欢迎引用我们的[论文](https://arxiv.org/abs/2611.17850)：
+
+```bibtex
+@misc{luo2026orbitweaver,
+  title         = {OrbitWeaver: {LLM} Agent Planning with Simulation Feedback for Optically Interconnected Orbital {GPU} Clusters},
+  author        = {Luo, Pengcheng and Zhang, Bowen},
+  year          = {2026},
+  eprint        = {2611.17850},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.DC},
+  url           = {https://arxiv.org/abs/2611.17850}
+}
+```
 
 ## 交流与许可
 
