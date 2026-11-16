@@ -11,7 +11,7 @@
 
 **English · [简体中文](README_zh.md)**
 
-[Paper](https://arxiv.org/abs/2611.17850) · [Overview](#why-orbitweaver) · [Quick start](#quick-start) · [A100 traces](datasets/a100) · [Simulator](docs/simulator.md) · [Data preparation](#data-preparation) · [Method](docs/method.md)
+[A100 traces](datasets/a100) · [Simulator](docs/simulator.md)
 
 </div>
 

@@ -11,7 +11,7 @@
 
 **[English](README.md) · 简体中文**
 
-[论文](https://arxiv.org/abs/2611.17850) · [背景](#为什么需要-orbitweaver) · [快速开始](#快速开始) · [A100 数据](datasets/a100) · [仿真器](docs/simulator.md) · [数据准备](#数据准备) · [方法说明](docs/method.md)
+[A100 数据](datasets/a100) · [仿真器](docs/simulator.md)
 
 </div>
 
