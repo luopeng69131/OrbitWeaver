@@ -4,6 +4,7 @@
 
 **面向光互连在轨 GPU 集群的 LLM Agent 联合规划**
 
+[![arXiv](https://img.shields.io/badge/arXiv-2611.17850-b31b1b.svg?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2611.17850)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Tests](https://github.com/luopeng69131/OrbitWeaver/actions/workflows/tests.yml/badge.svg)](https://github.com/luopeng69131/OrbitWeaver/actions/workflows/tests.yml)
@@ -126,7 +127,7 @@ orbitweaver build-case --graph data/h200_graph.json   --jobs 4 --condition slow-
 
 ## 引用
 
-如果您在研究中使用 OrbitWeaver，欢迎引用我们的[论文](https://arxiv.org/abs/2611.17850)：
+如果您觉得这项工作有用，欢迎引用我们的[论文](https://arxiv.org/abs/2611.17850)：
 
 ```bibtex
 @misc{luo2026orbitweaver,

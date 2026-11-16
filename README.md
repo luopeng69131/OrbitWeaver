@@ -4,6 +4,7 @@
 
 **LLM Agent Planning for Optically Interconnected Orbital GPU Clusters**
 
+[![arXiv](https://img.shields.io/badge/arXiv-2611.17850-b31b1b.svg?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2611.17850)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Tests](https://github.com/luopeng69131/OrbitWeaver/actions/workflows/tests.yml/badge.svg)](https://github.com/luopeng69131/OrbitWeaver/actions/workflows/tests.yml)
@@ -127,7 +128,7 @@ The package includes the native C++ simulator, a critical-path evaluator and a r
 
 ## Citation
 
-If you use OrbitWeaver in your research, please cite our [paper](https://arxiv.org/abs/2611.17850):
+If you find this work useful, please consider citing our [paper](https://arxiv.org/abs/2611.17850):
 
 ```bibtex
 @misc{luo2026orbitweaver,

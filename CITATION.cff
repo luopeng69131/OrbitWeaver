@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use OrbitWeaver, please cite the paper listed below."
+message: "If you find OrbitWeaver useful, please consider citing the paper listed below."
 type: software
 title: OrbitWeaver
 authors:
